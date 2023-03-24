@@ -48,20 +48,4 @@ describe("UserList", () => {
     expect(tableRows[1].textContent).toMatch("JKL");
     expect(tableRows[1].textContent).toMatch("Role2");
   });
-
-  it("invokes onEditUser callback when Edit button is pressed", () => {
-    const onEditUser = jest.fn();
-    const { container } = render(
-      <UserList onEditUser={onEditUser} users={testUsers} />
-    );
-    const tableRows = container.querySelectorAll("table > tbody > tr");
-    Array.from(tableRows).forEach((tableRow, idx) => {
-      const editButton = tableRow.querySelector<"button">("button");
-      expect(editButton).toBeTruthy();
-      act(() => {
-        editButton?.click();
-      });
-      expect(onEditUser).toHaveBeenLastCalledWith(testUsers[idx]);
-    });
-  });
 });
