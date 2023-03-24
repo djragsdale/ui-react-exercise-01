@@ -29,13 +29,13 @@ export const EditUserDialog: React.FC<EditUserDialogProps> = ({
   const dialogFooterActions = (
     <>
       <Button
-        id="edit-dialog-cancel-button"
+        role="edit-dialog-cancel-button"
         intent="danger"
         text="Cancel"
         onClick={onDialogCancel}
       />
       <Button
-        id="edit-dialog-submit-button"
+        role="edit-dialog-submit-button"
         intent="success"
         text="Confirm"
         onClick={() => handleDialogSubmit()}
@@ -44,10 +44,15 @@ export const EditUserDialog: React.FC<EditUserDialogProps> = ({
   );
 
   return (
-    <Dialog isOpen={isOpen} title="Informational dialog" icon="info-sign">
+    <Dialog
+      isOpen={isOpen}
+      title="Change user role"
+      icon="edit"
+      onClose={() => onDialogCancel()}
+    >
       <DialogBody>
         <p>
-          Change role for user: {user.idUser} {user.profile.firstName}
+          Change role for user: {user.idUser} {user.profile.firstName}{" "}
           {user.profile.lastName}
         </p>
         <HTMLSelect onChange={(event) => setNewRole(event.target.value)}>
