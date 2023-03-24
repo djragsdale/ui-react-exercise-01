@@ -51,8 +51,10 @@ export const EditUserDialog: React.FC<EditUserDialogProps> = ({
           {user.profile.lastName}
         </p>
         <HTMLSelect onChange={(event) => setNewRole(event.target.value)}>
-          {roles.map((role) => (
-            <option value={role}>{role}</option>
+          {roles.map((role, index) => (
+            <option key={role + index} value={role}>
+              {role}
+            </option>
           ))}
         </HTMLSelect>
       </DialogBody>
