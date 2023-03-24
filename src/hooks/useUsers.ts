@@ -48,7 +48,7 @@ export const useUsers = () => {
   const handleUpdateUser = (idUser: number, user: User) => {
     isDelayedUpdateCancelled.current = true;
 
-    const editedState = users.map((oldUser)=> user.idUser === idUser ? user : oldUser)
+    const editedState = users.map((oldUser)=> oldUser.idUser === idUser ? user : oldUser)
 
     setData(editedState);
   };
