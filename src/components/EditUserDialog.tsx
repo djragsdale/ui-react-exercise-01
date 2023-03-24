@@ -55,7 +55,10 @@ export const EditUserDialog: React.FC<EditUserDialogProps> = ({
           Change role for user: {user.idUser} {user.profile.firstName}{" "}
           {user.profile.lastName}
         </p>
-        <HTMLSelect onChange={(event) => setNewRole(event.target.value)}>
+        <HTMLSelect
+          role="edit-dialog-role-selector"
+          onChange={(event) => setNewRole(event.target.value)}
+        >
           {roles.map((role, index) => (
             <option key={role + index} value={role}>
               {role}

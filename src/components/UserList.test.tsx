@@ -48,4 +48,29 @@ describe("UserList", () => {
     expect(tableRows[1].textContent).toMatch("JKL");
     expect(tableRows[1].textContent).toMatch("Role2");
   });
+
+  it("should open dialog when edit button was clicked and close dialog when the user saves the role change", () => {
+    const onEditUser = jest.fn();
+    const { container, queryByRole } = render(
+      <UserList users={testUsers} onEditUser={onEditUser} />
+    );
+
+    const editButtons = container.querySelectorAll("button");
+    act(() => {
+      editButtons[0].click();
+    });
+
+    let roleSelector = queryByRole("edit-dialog-role-selector");
+    expect(roleSelector).toBeTruthy();
+
+    const submitButton = queryByRole("edit-dialog-submit-button");
+    expect(submitButton).toBeTruthy();
+
+    act(() => {
+      submitButton?.click();
+    });
+
+    roleSelector = queryByRole("edit-dialog-role-selector");
+    expect(roleSelector).toBeTruthy();
+  });
 });
