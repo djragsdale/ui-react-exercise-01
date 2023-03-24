@@ -26,6 +26,7 @@ export const EditUserDialog: React.FC<EditUserDialogProps> = ({
   const handleDialogSubmit = () => {
     onDialogSubmit({ ...user, role: newRole });
   };
+
   const dialogFooterActions = (
     <>
       <Button

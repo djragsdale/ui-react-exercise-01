@@ -47,7 +47,6 @@ describe("useUsers", () => {
 
   it("updates only the relevant user called by updateUser", () => {
     const {result} = renderHook(()=>useUsers());
-    console.log(result.current.data);
 
     if(result.current.data){
 
