@@ -1,8 +1,8 @@
-# UI Screening Application 01
+# UI React Exercise 01
 
 ## Introduction
 
-Welcome, candidate! This application is a simple incomplete and broken application that can be used to showcase basic React and UI skills. The specific technology used here is not necessarily indicative of what is used in a specific project, but is a helpful baseline to see how a candidate can work with the following technologies:
+Welcome, candidate! This exercise is a simple incomplete and broken application that can be used to showcase basic React and UI skills. The specific technology used here is not necessarily indicative of what is used in a specific project, but is a helpful baseline to see how a candidate can work with the following technologies:
 
 - React
 - TypeScript
